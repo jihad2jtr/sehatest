@@ -4,7 +4,7 @@ workflows:
     environment:
       vars:
         PACKAGE_NAME: "com.zoolka.app"
-      node: 18.18.0
+      node: 20.12.2
       java: 17
     scripts:
       - name: Install dependencies
