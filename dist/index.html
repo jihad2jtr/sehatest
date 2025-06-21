@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نظام صحة V4.1</title>
+    <meta name="description" content="نظام إدارة بيانات صحة" />
+    <meta name="author" content="Lovable" />
+    <meta name="theme-color" content="#2AA8E0" />
+
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="صحة" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="نظام صحة V4.1" />
+    <meta property="og:description" content="نظام إدارة بيانات صحة" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- Twitter Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <!-- Base tag for SPA routing -->
+    <base href="/" />
+    <script type="module" crossorigin src="/assets/index-B4DBPy6k.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B6iGbXb7.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    
+    <!-- Register Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+              console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(function(error) {
+              console.log('Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
+    <!-- Offline detection -->
+    <script>
+      window.addEventListener('online', () => {
+        document.body.classList.remove('offline');
+      });
+      
+      window.addEventListener('offline', () => {
+        document.body.classList.add('offline');
+      });
+      
+      if (!navigator.onLine) {
+        document.body.classList.add('offline');
+      }
+    </script>
+    <!-- Handle direct access to routes -->
+    <script>
+      // This helps with SPA routing when directly accessing URLs
+      (function() {
+        // Only run this script if we are on the server-rendered version
+        if (window.location.pathname !== '/' && !document.getElementById('root').hasChildNodes()) {
+          console.log('Handling direct route access:', window.location.pathname);
+        }
+      })();
+    </script>
+  </body>
+</html>

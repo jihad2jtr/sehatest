@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">zoolkaapp</string>
+    <string name="title_activity_main">zoolkaapp</string>
+    <string name="package_name">com.zoolka.app</string>
+    <string name="custom_url_scheme">com.zoolka.app</string>
+</resources>
